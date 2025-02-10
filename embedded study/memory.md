@@ -39,6 +39,7 @@
 2. USART（UART）：串口通讯协议
    * 异步（Asynchronous）不用接受反馈就可以继续发送数据，适合短距离通信，速度快，但数据量有限。//比特率相等，起始位、停止位、校验位相同
    * 同步(Synchronous)需要接受反馈才能发送下一位数据，适合长距离通信，速度慢，但数据量大。
+   * ![alt text](image-8.png)
 3. PWM：（Pulse Width Modulation）脉冲宽度调制!![alt text](PWM.png)
    * 通过改变占空比来控制输出电压的变化，来达到不同频率的控制信号。
    * f(PWM)=时钟脉冲/(PSC(预分频器)+1)/(ARR(自动重装值)+1)  计数器可以向上或向下计数，ARR为计数器的最大值。
@@ -78,11 +79,17 @@
 ### system code
 1. CORTEX-M系列：ARM处理器
 2. DMA：直接存储器存取，适合较大数据的高速传输
+   * pwm compare数值数组传输
 3. NVIC：中断向量控制器
 4. WDG：看门狗
 5. RCC：时钟控制器
 6. SYS：系统控制
 7. freeRTOS：实时操作系统
+8. RTC：时钟系统
+   * 设置系统时间：HAL_RTC_SetTime();
+   * 读取系统时间: HAL_RTC_GetTime();
+   * 设置系统日期: HAL_RTC_SetDate(); 
+   * 读取系统日期: HAL_RTC_GetDate();
 
 
 ### 外设驱动开发
